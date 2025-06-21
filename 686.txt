@@ -1,0 +1,16 @@
+class Solution {
+    public int repeatedStringMatch(String a, String b) {
+        int count = 0;
+        String str = "";
+        while(str.length()<10001){
+            if(str.contains(b)) return count;
+            else{
+                str = str+a;
+                count++;
+            }
+        }
+        return -1;
+    }
+}
+
+// LAZY SOLUTION. ( NOT OPTIMIZED )
