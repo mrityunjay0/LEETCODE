@@ -1,0 +1,22 @@
+class Solution {
+    public String generateTag(String caption) {
+        caption = caption.trim();
+        String[] words = caption.split(" ");
+        StringBuilder result = new StringBuilder("#");
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].isEmpty()) continue;
+            if (i==0){
+                result.append(words[i].toLowerCase());
+            }
+            else{
+                result.append(Character.toUpperCase(words[i].charAt(0))).append(words[i].substring(1).toLowerCase());
+            }
+            if (result.length()>=100) {
+                result.setLength(100);
+                break;
+            }
+        }
+        if(result.length()>100) result.setLength(100);
+        return result.toString();
+    }
+}
