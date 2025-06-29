@@ -3,7 +3,7 @@ class Solution {
     public int sumDigit(int n){
         int sum = 0;
         while(n>0){
-            int rem = n%10;
+            int rem = n%10;             //for(;n>0;sum+=n%10,n/=10) it can also be used to perform in one line.
             sum+=rem;
             n/=10;
         }
