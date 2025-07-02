@@ -1,0 +1,18 @@
+class Solution {
+    public int maxBottlesDrunk(int nb, int x) {
+        int eb = nb;
+        int count = nb;
+        int fb = 0;
+        while(x<=eb){
+            eb-=x;
+            fb++;
+            x++;
+            if(eb<x){
+                eb+=fb;
+                count+=fb;
+                fb = 0;
+            }
+        }
+        return count;
+    }
+}
