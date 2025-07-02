@@ -1,0 +1,13 @@
+class Solution {
+    public int numWaterBottles(int nb, int ne) {
+        int empty = nb;
+        int count = nb;
+        while(empty>=ne){
+            int rem = empty % ne;
+            empty /= ne;
+            count += empty;
+            empty += rem;
+        }
+        return count;
+    }
+}
