@@ -1,0 +1,64 @@
+class Solution {
+    public int minimumRefill(int[] plants, int capacityA, int capacityB) {
+        int count = 0;
+        int capA = capacityA;
+        int capB = capacityB;
+
+        if(plants.length%2!=0){
+
+            for(int i = 0;i<plants.length/2;i++){
+                if(plants[i]<=capA){
+                    capA -= plants[i];
+                }
+                else{
+                    capA = capacityA-plants[i];
+                    count++;
+                }
+            }
+
+            
+            for(int i = plants.length-1;i>plants.length/2;i--){
+                if(capB>=plants[i]){
+                    capB -= plants[i];
+                }
+                else{
+                    capB = capacityB-plants[i];
+                    count++;
+                }
+            }
+
+            if(capA>=plants[plants.length/2]){
+                capA -= plants[plants.length/2];
+            }
+            else if(capB>=plants[plants.length/2]){
+                capB -= plants[plants.length/2];
+            }
+            else{
+                count++;
+            }
+        }
+
+        else{
+            for(int i = 0;i<plants.length/2;i++){
+                if(capA>=plants[i]){
+                    capA -= plants[i];
+                }
+                else{
+                    capA = capacityA-plants[i];
+                    count++;
+                }
+            }
+
+            for(int i = plants.length-1;i>=plants.length/2;i--){
+                if(capB>=plants[i]){
+                    capB -= plants[i];
+                }
+                else{
+                    capB = capacityB-plants[i];
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
