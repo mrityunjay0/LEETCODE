@@ -1,5 +1,5 @@
 class Solution {
-    public int matchPlayersAndTrainers(int[] pl, int[] tr) {
+    public int matchPlayersAndTrainers(int[] pl, int[] tr){
         Arrays.sort(pl);
         Arrays.sort(tr);
         int count = 0;
@@ -19,7 +19,7 @@ class Solution {
 -----_____-----_____-----_____-----_____-----_____-----_____-----_____-----_____
 
 class Solution {
-    public int matchPlayersAndTrainers(int[] pl, int[] tr) {
+    public int matchPlayersAndTrainers(int[] pl, int[] tr){
         int ans = 0;
         Arrays.sort(pl);
         Arrays.sort(tr);
