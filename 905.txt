@@ -1,0 +1,43 @@
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+        int start = 0;
+        int end = nums.length - 1;
+
+        while (start < end) {
+            if (nums[start] % 2 == 0) start++; 
+            else if (nums[end] % 2 == 1) end--;
+            else {
+                int temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+                start++;
+                end--;
+            }
+        }
+        return nums;
+    }
+}
+
+-----_____-----_____-----_____-----_____-----_____-----_____-----_____-----_____
+
+class Solution {
+    public int[] sortArrayByParity(int[] A) {
+        int arr[]=new int[A.length];
+        int j=0;
+        int k=A.length-1;
+        for(int i=0;i<A.length;i++)
+        {
+            if(A[i]%2==0)
+            {   
+                arr[j]=A[i];
+                j++;
+            }
+            else
+            {   
+                arr[k]=A[i];
+                k--;
+            }
+        }
+        return arr;
+    }
+}
