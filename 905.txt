@@ -4,7 +4,7 @@ class Solution {
         int end = nums.length - 1;
 
         while (start < end) {
-            if (nums[start] % 2 == 0) start++; 
+            if (nums[start] % 2 == 0) start++;
             else if (nums[end] % 2 == 1) end--;
             else {
                 int temp = nums[start];
@@ -25,15 +25,12 @@ class Solution {
         int arr[]=new int[A.length];
         int j=0;
         int k=A.length-1;
-        for(int i=0;i<A.length;i++)
-        {
-            if(A[i]%2==0)
-            {   
+        for(int i=0;i<A.length;i++){
+            if(A[i]%2==0){
                 arr[j]=A[i];
                 j++;
             }
-            else
-            {   
+            else{
                 arr[k]=A[i];
                 k--;
             }
